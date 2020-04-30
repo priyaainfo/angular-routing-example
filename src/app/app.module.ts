@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ChildAComponentComponent } from './child-acomponent/child-acomponent.component';
+import { ChildBComponentComponent } from './child-bcomponent/child-bcomponent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
-    SecondComponent
+    SecondComponent,
+    PageNotFoundComponent,
+    ChildAComponentComponent,
+    ChildBComponentComponent
   ],
   imports: [
     BrowserModule,
