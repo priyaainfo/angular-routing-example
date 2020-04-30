@@ -20,7 +20,9 @@ const routes: Routes = [
         path: 'child-b',
         component: ChildBComponentComponent // another child route component that the router renders
       }, ]
-  }
+  },
+  { path: '', redirectTo: '/first-component', pathMatch: 'full' }, // redirect to `first-component`
+  { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ];
 
 // configures NgModule imports and exports
