@@ -8,25 +8,30 @@ import { ChildBComponentComponent } from './child-bcomponent/child-bcomponent.co
 import { CourseListComponent } from './course-list/course-list.component';
 import { ExampleComponent } from './example/example.component';
 import { HomeComponent } from './home/home.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 // sets up routes constant where you define your routes
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent, // this is the component with the <router-outlet> in the template
+    component: HomeComponent,
   },
   {
     path: 'courses',
-    component: CourseListComponent, // this is the component with the <router-outlet> in the template
+    component: CourseListComponent,
+  },
+  {
+    path: 'courses/:id',
+    component: CourseDetailComponent,
   },
   {
     path: 'example', component: ExampleComponent, children: [{
       path: 'first-component',
-      component: FirstComponent, // this is the component with the <router-outlet> in the template
+      component: FirstComponent,
     },
     {
       path: 'second-component',
-      component: SecondComponent, // this is the component with the <router-outlet> in the template
+      component: SecondComponent,
       children: [
         {
           path: 'child-a', // child route path

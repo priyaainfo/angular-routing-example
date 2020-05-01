@@ -1,1 +1,9 @@
-<p>course-list works!</p>
+<div class="card-deck">
+    <div class="card" *ngFor="let course of courseList"  [routerLink]="['/courses', course.id]">
+        <img class="card-img-top" src="assets/{{course.image}}.jpg"
+         [alt]="course.name">
+        <div class="card-body">
+            <p class="card-text">{{course.name}}</p>
+        </div>
+    </div>
+</div>

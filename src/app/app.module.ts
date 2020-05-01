@@ -12,6 +12,7 @@ import { ChildBComponentComponent } from './child-bcomponent/child-bcomponent.co
 import { CourseListComponent } from './course-list/course-list.component';
 import { ExampleComponent } from './example/example.component';
 import { HomeComponent } from './home/home.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     ChildBComponentComponent,
     CourseListComponent,
     ExampleComponent,
-    HomeComponent
+    HomeComponent,
+    CourseDetailComponent
   ],
   imports: [
     BrowserModule,
