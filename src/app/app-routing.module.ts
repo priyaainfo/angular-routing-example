@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'first-component',
     component: FirstComponent, // this is the component with the <router-outlet> in the template
+  },
+  {
+    path: 'second-component',
+    component: SecondComponent, // this is the component with the <router-outlet> in the template
     children: [
       {
         path: 'child-a', // child route path
@@ -19,7 +23,7 @@ const routes: Routes = [
       {
         path: 'child-b',
         component: ChildBComponentComponent // another child route component that the router renders
-      }, ]
+      }]
   },
   { path: '', redirectTo: '/first-component', pathMatch: 'full' }, // redirect to `first-component`
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
