@@ -2,5 +2,5 @@
   color: #de1a2e !important;
 }
 .main-container{
-    padding: .5rem 1rem;
+    height: calc( 100vh - 72px);
 }
