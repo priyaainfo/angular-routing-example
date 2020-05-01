@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-second',
@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
 })
 export class SecondComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
   goto() {
-    this.route.navigate(['./first-component']);
+    this.route.navigate(['../first-component'], { relativeTo: this.activatedRoute });
   }
 
   gotoByUrl() {
