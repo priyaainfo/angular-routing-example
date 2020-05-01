@@ -9,20 +9,32 @@ import { CourseListComponent } from './course-list/course-list.component';
 import { ExampleComponent } from './example/example.component';
 import { HomeComponent } from './home/home.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
+import { EnrollComponent } from './enroll/enroll.component';
 
 // sets up routes constant where you define your routes
 const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   {
     path: 'home',
     component: HomeComponent,
   },
   {
     path: 'courses',
-    component: CourseListComponent,
+    component: CourseListComponent
   },
   {
     path: 'courses/:id',
     component: CourseDetailComponent,
+  },
+  {
+    path: 'enroll',
+    component: EnrollComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'example', component: ExampleComponent, children: [{
@@ -32,6 +44,7 @@ const routes: Routes = [
     {
       path: 'second-component',
       component: SecondComponent,
+      canActivateChild: [AuthGuard],
       children: [
         {
           path: 'child-a', // child route path
@@ -42,6 +55,11 @@ const routes: Routes = [
           component: ChildBComponentComponent // another child route component that the router renders
         }]
     }]
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+    canLoad: [AuthGuard]
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // redirect to `example-component`
   { path: '**', component: HomeComponent },  // Wildcard route for a 404 page

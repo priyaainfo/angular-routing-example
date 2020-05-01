@@ -1,2 +1,10 @@
-<h2>Course Detail</h2>
-{{courseObj | json}}
+<h2 class="card-text">{{courseObj.name}}</h2>
+<img src="assets/{{courseObj.image}}.jpg" [alt]="courseObj.name">
+<div class="card-body">
+    <h3>Description</h3>
+    <p class="card-text">{{courseObj.desc}}</p>
+</div>
+
+<div>
+    <button type="button" routerLink="/enroll" class="btn btn-dark mr-2" (click)="enroll()">Register</button>
+</div>
