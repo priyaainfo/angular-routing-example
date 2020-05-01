@@ -1,3 +1,6 @@
 .active {
-  background-color: yellow;
+  color: #de1a2e !important;
+}
+.main-container{
+    padding: .5rem 1rem;
 }
