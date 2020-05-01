@@ -9,6 +9,9 @@ import { SecondComponent } from './second/second.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ChildAComponentComponent } from './child-acomponent/child-acomponent.component';
 import { ChildBComponentComponent } from './child-bcomponent/child-bcomponent.component';
+import { CourseListComponent } from './course-list/course-list.component';
+import { ExampleComponent } from './example/example.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ChildBComponentComponent } from './child-bcomponent/child-bcomponent.co
     SecondComponent,
     PageNotFoundComponent,
     ChildAComponentComponent,
-    ChildBComponentComponent
+    ChildBComponentComponent,
+    CourseListComponent,
+    ExampleComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

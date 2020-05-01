@@ -14,11 +14,11 @@ export class SecondComponent implements OnInit {
   }
 
   goto() {
-    this.route.navigate(['first-component']);
+    this.route.navigate(['./first-component']);
   }
 
   gotoByUrl() {
-    this.route.navigateByUrl('/first-component');
+    this.route.navigateByUrl('/example/first-component');
   }
 
 }

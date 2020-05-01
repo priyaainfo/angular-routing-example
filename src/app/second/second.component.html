@@ -1,11 +1,13 @@
 <h2>Second Component</h2>
-<button type="button"  class="btn btn-dark pr-2" (click)="goto()">Go to</button>
+<button type="button" class="btn btn-dark mr-2" (click)="goto()">Go to </button>
 <button type="button" class="btn btn-dark" (click)="gotoByUrl()">Go By URL</button>
 <nav>
-    <ul>
+    <ul class="list-group mt-2">
         <li><a routerLink="./child-a">Relative Route to first child component</a></li>
         <li><a routerLink="./child-b">Relative Route to second child component</a></li>
     </ul>
 </nav>
-
-<router-outlet></router-outlet>
+<div class="alert alert-info">
+    <h3>Level-3 routing</h3>
+    <router-outlet></router-outlet>
+</div>

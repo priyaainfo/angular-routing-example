@@ -1,0 +1,14 @@
+<h1>Angular Routing App Example</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+    <ul>
+        <li><a routerLink="./first-component" routerLinkActive="active">First Component</a></li>
+        <li><a routerLink="./second-component" routerLinkActive="active">Second Component</a></li>
+    </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+
+<div class="alert alert-warning">
+    <h3>Level-2 routing</h3>
+    <router-outlet></router-outlet>
+</div>
