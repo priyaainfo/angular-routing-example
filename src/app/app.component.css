@@ -1,6 +1,12 @@
 .active {
   color: #de1a2e !important;
 }
-.main-container{
-    height: calc( 100vh - 72px);
+
+.main-container {
+  height: calc(100vh - 72px);
+}
+
+.highlight{
+  font-size: 18px;
+  font-weight: bold;
 }
