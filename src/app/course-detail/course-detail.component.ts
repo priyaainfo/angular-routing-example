@@ -9,7 +9,7 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./course-detail.component.css']
 })
 export class CourseDetailComponent implements OnInit {
-  courseObj: any;
+  courseObj: any = {};
   id;
   name;
   constructor(
@@ -21,6 +21,8 @@ export class CourseDetailComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       // tslint:disable-next-line:no-string-literal
       this.name = params['name'];
+      console.log('Query param value');
+      console.log(this.name);
     });
   }
 

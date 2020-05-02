@@ -1,5 +1,5 @@
 <h2 class="card-text">{{courseObj.name}}</h2>
-<img src="assets/{{courseObj.image}}.jpg" [alt]="courseObj.name">
+<img *ngIf=courseObj.image src="assets/{{courseObj.image}}.jpg" [alt]="courseObj.name">
 <div class="pt-2 pb-2">
     <h3>Description</h3>
     <p class="card-text">{{courseObj.desc}}</p>
@@ -7,5 +7,5 @@
 
 <div>
     <button type="button" routerLink="/enroll" class="btn btn-dark mr-2" (click)="enroll()">Register</button>
-    <button type="button" routerLink="/courses" class="btn btn-dark mr-2" >Back</button>
+    <button type="button" routerLink="/courses" class="btn btn-dark mr-2">Back</button>
 </div>
