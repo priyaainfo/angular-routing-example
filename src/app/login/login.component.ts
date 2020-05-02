@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   message: string;
+  loginForm: FormGroup;
 
-  constructor(public authService: AuthService, public router: Router) {
+  constructor(public authService: AuthService, public router: Router, private formBuilder: FormBuilder) {
     this.setMessage();
   }
 
@@ -20,7 +22,9 @@ export class LoginComponent {
 
   login() {
     this.message = 'Trying to log in ...';
-
+    if (this.loginForm.invalid) {
+      return;
+    }
     this.authService.login().subscribe(() => {
       this.setMessage();
       if (this.authService.isLoggedIn) {
@@ -37,5 +41,11 @@ export class LoginComponent {
   logout() {
     this.authService.logout();
     this.setMessage();
+  }
+
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      username: ['', [Validators.required, Validators.email]]
+    });
   }
 }

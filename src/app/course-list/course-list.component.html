@@ -1,4 +1,4 @@
-<div class="card-deck">
+<div class="card-deck mt-2">
     <div class="card" *ngFor="let course of courseList"  [routerLink]="['/courses', course.id]">
         <img class="card-img-top" src="assets/{{course.image}}.jpg"
          [alt]="course.name">
